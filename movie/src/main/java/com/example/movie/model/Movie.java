@@ -1,33 +1,30 @@
 package com.example.movie.model;
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "movies")
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "title", nullable = false)
     private String title;
 
-    @Column(name = "director", nullable = false)
-    private String director;
-
-    @Column(name = "release_date")
-    private Date releaseDate;
-
     @Column(name = "genre")
     private String genre;
 
+    @Column(name = "year")
+    private Integer year;
+
     // Getters y setters
-    public int getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -39,20 +36,12 @@ public class Movie {
         this.title = title;
     }
 
-    public String getDirector() {
-        return director;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
-    }
-
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getGenre() {
